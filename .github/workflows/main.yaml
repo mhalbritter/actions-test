@@ -18,3 +18,7 @@ jobs:
           java-version: '17'
       - name: Set Up Gradle
         uses: gradle/actions/setup-gradle@d156388eb19639ec20ade50009f3d199ce1e2808 # v4.1.0
+      - name: List installed packages
+        run: "apt list --installed"
+      - name: Show free disk space
+        run: df -h
