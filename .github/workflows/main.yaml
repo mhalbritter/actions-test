@@ -5,20 +5,30 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out repository code
-        uses: actions/checkout@v4
-      - name: Free Disk Space
-        uses: jlumbroso/free-disk-space@54081f138730dfa15788a46383842cd2f914a1be # v1.3.1
-        with:
-          docker-images: false
-      - name: Set Up Java
-        uses: actions/setup-java@v4
-        with:
-          distribution: 'liberica'
-          java-version: '17'
-      - name: Set Up Gradle
-        uses: gradle/actions/setup-gradle@d156388eb19639ec20ade50009f3d199ce1e2808 # v4.1.0
+      #      - name: Check out repository code
+      #        uses: actions/checkout@v4
+      #      - name: Free Disk Space
+      #        uses: jlumbroso/free-disk-space@54081f138730dfa15788a46383842cd2f914a1be # v1.3.1
+      #        with:
+      #          docker-images: false
+      #      - name: Set Up Java
+      #        uses: actions/setup-java@v4
+      #        with:
+      #          distribution: 'liberica'
+      #          java-version: '17'
+      #      - name: Set Up Gradle
+      #        uses: gradle/actions/setup-gradle@d156388eb19639ec20ade50009f3d199ce1e2808 # v4.1.0
       - name: List installed packages
         run: "apt list --installed"
       - name: Show free disk space
         run: df -h
+      - name: Remove packages
+        run: sudo apt purge -y ant-optional ant apache2 g++ '^gfortran*' imagemagick '^libmono*' '^libmagic*' mercurial mssql-tools nginx nuget heroku kubectl microsoft-edge-stable '^mono*' postgresql-14 postgresql-client-14 r-base '^r-cran-*' r-doc-html r-recommended '^temurin-*' ruby-full snapd subversion texinfo unixodbc-dev
+      - name: Show free disk space
+        run: df -h
+      - name: Clean up apt
+        run: sudo apt autoremove --purge -y; sudo apt autoclean -y; sudo apt clean -y
+      - name: Show free disk space
+        run: df -h
+      - name: List installed packages
+        run: "apt list --installed"
