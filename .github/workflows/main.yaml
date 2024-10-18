@@ -21,10 +21,10 @@ jobs:
         run: "apt list --installed"
       - name: Clean up files
         run: |
-          sudo rm -rfv /usr/share/swift
-          sudo rm -rfv /opt/hostedtoolcache
-          sudo rm -rfv /usr/local/share/powershell
-          sudo rm -rfv /usr/local/share/chromium
+          sudo rm -rf /usr/share/swift
+          sudo rm -rf /opt/hostedtoolcache
+          sudo rm -rf /usr/local/share/powershell
+          sudo rm -rf /usr/local/share/chromium
       - name: Show free disk space
         run: df -h
       - name: Check out repository code
