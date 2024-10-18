@@ -32,18 +32,10 @@ jobs:
         run: "apt list --installed"
       - name: Clean up files
         run: |
-          sudo rm -rfv /usr/share/dotnet
           sudo rm -rfv /usr/share/swift
-          sudo rm -rfv /usr/local/lib/android
-          sudo rm -rfv /opt/ghc
-          sudo rm -rfv /usr/local/.ghcup
-          sudo rm -rfv "/usr/local/share/boost"
-          sudo rm -rfv "$AGENT_TOOLSDIRECTORY"
-          sudo rm -rfv /opt/hostedtoolcache/
-          sudo rm -rfv /usr/local/graalvm/
+          sudo rm -rfv /opt/hostedtoolcache
           sudo rm -rfv /usr/local/share/powershell
           sudo rm -rfv /usr/local/share/chromium
-          sudo rm -rfv /usr/local/lib/node_modules
       - name: Show free disk space
         run: df -h
 
