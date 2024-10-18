@@ -23,7 +23,7 @@ jobs:
       - name: Show free disk space
         run: df -h
       - name: Remove packages
-        run: sudo apt purge -y ant-optional ant apache2 g++ '^gfortran*' imagemagick '^libmono*' '^libmagic*' mercurial mssql-tools nginx nuget heroku kubectl microsoft-edge-stable '^mono*' postgresql-14 postgresql-client-14 r-base '^r-cran-*' r-doc-html r-recommended '^temurin-*' ruby-full snapd subversion texinfo unixodbc-dev
+        run: sudo apt purge -y ant-optional ant apache2 '^gfortran*' imagemagick '^libmono*' mercurial mssql-tools nginx nuget heroku kubectl microsoft-edge-stable '^mono*' postgresql-14 r-base '^r-cran-*' r-doc-html r-recommended '^temurin-*' ruby-full snapd subversion texinfo unixodbc-dev
       - name: Show free disk space
         run: df -h
       - name: Clean up apt
